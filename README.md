@@ -1,11 +1,11 @@
 # Micrositio
 
-Descripción
+Este sitio es un espacio para conocer todo lo que esta relacionado con el mundo mágico.
 
 ## Autor
 
 Julián Esteban Durango 
-[website]{}
+[website](https://www.linkedin.com/onboarding/start/abook-import/new/)
 
 ## Secciones
 
@@ -17,4 +17,4 @@ Julián Esteban Durango
 
 ## Wireframes
 
-En esta sección [(clic aquí)]{https://mail.google.com/mail/u/0/?tab=rm#inbox} se encuentran los wireframes de las diferentes secciones del micrositio
+En esta sección [(clic aquí)](https://github.com/juliandurango/Micrositio/tree/master/wireframes) se encuentran los wireframes de las diferentes secciones del micrositio.
