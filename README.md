@@ -17,4 +17,4 @@ Julián Esteban Durango
 
 ## Wireframes
 
-En esta sección [(clic aquí)](https://github.com/juliandurango/Micrositio/tree/master/wireframes) se encuentran los wireframes de las diferentes secciones del micrositio.
+En esta sección [(clic aquí)](https://www.linkedin.com/in/juli%C3%A1n-esteban-durango-ram%C3%ADrez-3514311b3/) se encuentran los wireframes de las diferentes secciones del micrositio.
