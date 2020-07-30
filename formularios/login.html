@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Login</title>
-<meta charset="UTF-8" />
-<link rel="stylesheet" type="text/css" href="css/login.css">
+	<title>Login</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
  
 <body>
+
+  <form class="login" method="POST" action="./contenido.html">
+  	<h4>Inicio sesión</h4>
+    <div>
+    	<input class="campo" type="email" name="correo" id="correo" placeholder="Ingrese su correo electrónico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
+  		<title>"Ingrese el correo"</title>
+    </div>
+    
+    <input class="campo" type="password" name="contraseña" id="contraseña" placeholder="Ingrese su contraseña" pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$" required/>
+
+    <button class="button" type="submit" href="./contenido.html">Iniciar sesión</button>
+    <p>¿No tengo cuenta? <a href="./index.html">Registrate</a></p>
+  </form>
+
 </body>
 </html>

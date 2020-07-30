@@ -5,7 +5,8 @@
 }
 
 body{
-	background-image: url("../img/fondo.jpg");
+	/*background-image: url("../img/fondo_1.jpg");*/
+	background: white;
 	background-size: cover;
 }
 
@@ -13,8 +14,7 @@ body{
 	width: 400px;
 	background: #24303c;
 	padding: 30px;
-	margin: auto;
-	margin-top: 50px;
+	margin: 3% auto;
 	border-radius: 4px;
 	font-family: 'calibri';
 	color: white;
@@ -38,6 +38,14 @@ body{
 	color: white;
 }
 
+/*.campo:invalid {
+  border: 1px solid red;
+}
+
+.campo:valid {
+  border: 1px solid black;
+}*/
+
 .combo{
 	width: 49%;
 	background: #24303c;
@@ -58,6 +66,11 @@ body{
 	color: white;
 	margin: 16px 0;
 	font-size: 16px;
+	cursor: pointer;
+}
+
+.button:hover{
+	background: #273F8A;
 }
 
 .registro p{
@@ -65,7 +78,249 @@ body{
 	font-size: 18px;
 }
 
+.registro a{
+	text-decoration: none;
+	color: white;
+}
+
 .registro a:hover{
 	color: white;
 	text-decoration: underline;
+}
+
+/* PÁGINA DE LOGIN */
+
+.login{
+	width: 400px;
+	background: #24303c;
+	padding: 30px;
+	margin: auto;
+	margin-top: 200px;
+	margin-bottom: 100px;
+	border-radius: 4px;
+	font-family: 'calibri';
+	color: white;
+	box-shadow: 7px 13px 37px #000;
+}
+
+.login h4{
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+
+.campo{
+	width: 100%;
+	background: #24303c;
+	padding: 10px;
+	border-radius: 4px;
+	margin-bottom: 16px;
+	border: 1px solid #1f53c5;
+	font-family: 'calibri';
+	font-size: 18px;
+	color: white;
+}
+
+.login p{
+	text-align: center;
+	font-size: 18px;
+}
+
+.login a{
+	text-decoration: none;
+	color: white;
+}
+
+.login a:hover{
+	color: white;
+	text-decoration: underline;
+}
+
+/*PÁGINA DE CONTENIDO*/
+
+.info{
+	padding: 10px 180px 50px 180px; /*top, right, bottom, left*/
+}
+
+.h1{
+	font-size: 50px;
+	text-align: center;
+	color: #000; 
+}
+
+.h3{
+    margin-right: 68px;
+    margin-left: 68px;
+	color: #000;
+	padding: 15px 30px;
+	text-align: justify;
+	font-size: 40px;
+}
+
+.image{
+	float: left;
+	margin-top: 10px;
+	margin-right: 20px;
+    margin-left: 80px;
+    width: 250px;
+    height: 270px;
+}
+
+.parrafos{
+	margin-top: 10px;
+    margin-right: 68px;
+    margin-left: 68px;
+	color: #000;
+	text-align: justify;
+	padding: 15px 30px;
+	font-size: 23px;
+}
+
+/*GALERÍA*/
+
+.galeria{
+	overflow: hidden;
+}
+
+.title {
+	overflow: hidden;
+	font-family: 'Calibri';
+	margin-left: 60px;
+	font-size: 70px;
+	color: #1f53c5;
+	letter-spacing: 1px;
+	line-height: 100%;
+	text-align: center;
+}
+
+.menu_bar {
+	display:none;
+}
+
+header {
+	width:100%;
+}
+ 
+header nav {
+	width:92%;
+	max-width:1042px;
+	margin:20px auto;
+	margin-left: 180px;
+	background:#1f53c5;
+	box-shadow: -3px -3px 3px #000, 3px 3px 3px #000, -3px 0px 3px #000, 3px -3px 3px #000;
+	z-index: 1000;
+}
+
+header nav ul {
+	list-style:none;
+}
+ 
+header nav ul li {
+	display: inline-block;
+	position: relative;
+}
+ 
+header nav ul li a {
+	font-family: 'Chelsea Market', cursive;
+	color:#fff;
+	padding:82px;
+	padding-top:15px;
+	padding-bottom:15px;
+	margin-right: 15px;
+	display:block;
+	text-decoration:none;
+}
+ 
+header nav ul li a span {
+	margin-right:10px;
+}
+ 
+header nav ul li:hover {
+	background:#273F8A;
+	
+}
+
+.example-desc {
+    margin:3px 0;
+    padding:5px;
+}
+
+#carousel {
+    width:850px;
+    margin:auto;
+    margin-top: 70px;
+    height:300px;
+    position:relative;
+    clear:both;
+    overflow:hidden;
+}
+
+#carousel img {
+    visibility:hidden; /* hide images until carousel can handle them */
+    cursor:pointer; /* otherwise it's not as obvious items can be clicked */
+    width: 500px;
+}
+
+.split-left {
+    width:450px;
+    float:left;
+}
+
+.split-right {
+    width:400px;
+    float:left;
+    margin-left:10px;
+}
+
+#prev{
+    list-style: none;
+    overflow: hidden;
+    display: block;
+    margin-top: -170px;
+    padding: 10px 180px;
+    color: #000;
+    text-decoration: none;
+}
+
+#next{  
+    list-style: none;
+    overflow: hidden;
+    display: block;
+    margin-left: 690px;
+    margin-top: -35px;
+    padding: 10px 470px;
+    color: #000;
+    text-decoration: none;
+}
+
+#callback-output {
+    height:250px;
+    overflow:scroll;
+}
+
+/*PÁGINA DE CONTACTO*/
+.acerca{
+	padding: 10px 180px;
+}
+
+.foto{
+	margin: auto;
+	margin-top: 50px;
+   	margin-left: 390px;
+   	margin-bottom: 10px;
+}
+
+.line{
+	width: 40px;
+	height: 170px;
+	margin-top: -3000px;
+   	margin-left: 500px;
+   	margin-bottom: 20px;
+}
+
+.parrafo{
+	margin-top: -80px;
+    margin-left: 580px;
+	color: #000;
+	padding: -25px 30px;
+	font-size: 23px;
 }

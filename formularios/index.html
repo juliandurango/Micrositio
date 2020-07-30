@@ -1,84 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Registro</title>
-<meta charset="UTF-8"/>
-<link rel="stylesheet" type="text/css" href="css/main.css">
+	<title>Registro</title>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
  
 <body>
 <script type= "text/javascript" src="./js/main.js"></script>
 
-  <form class="registro">
+  <form class="registro" method="POST" action="./contenido.html">
   	<h4>Registro</h4>
   	<div>
-  		<input class="campo" type="text" name="nombres" id="nombres" placeholder="Ingrese su nombre" pattern="(?=.*[a-z])(?=.*[A-Z]).{3,}" required/>
-  		<title>"Ingrese el nombre completo"</title>
+  		<input class="campo" type="text" name="nombres" placeholder="Nombre" pattern="(?=.*[a-z])(?=.*[A-Z]).{3,}" required/>
   	</div>
 
   	<div>
-  		<input class="campo" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su apellido" pattern="(?=.*[a-z])(?=.*[A-Z]).{5,}" required/>
-  		<title>"Ingrese el apellido completo"</title>
+  		<input class="campo" type="text" name="apellidos" placeholder="Apellido" pattern="(?=.*[a-z])(?=.*[A-Z]).{5,}" required/>
   	</div>
     
     <div>
-    	<input class="campo" type="email" name="correo" id="correo" placeholder="Ingrese su correo electrónico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
-  		<title>"Ingrese el correo"</title>
+    	<input class="campo" type="email" name="correo" placeholder="Correo Electrónico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
     </div>
 
     <div>
-    	<input class="campo" type="number" name="edad" id="edad" placeholder="Ingrese su edad" pattern="[0-9]{1,2}" required/>
-  		<title>"Ingrese la edad"</title>
+    	<input class="campo" type="number" name="edad" placeholder="Edad" pattern="[0-9]{1,2}" min="12" max="60" required/>
     </div>
     
-    <input class="campo" type="password" name="contraseña" id="contraseña" placeholder="Ingrese su contraseña">
+    <input class="campo" type="password" name="clave" placeholder="Contraseña" pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$" title="Una contraseña válida debe estar compuesta por letras y/o números y tener una longitud entre 8 y 16 caracteres" required/>
 
-        <select name="Departamento" id="Departamento"  data-placeholder="- Seleccione Departamento -"
-             class="combo" onchange="change(this.id, 'Ciudad')"
-             value="<%= typeof Departamento != 'undefined' ? Departamento : '' %>">
-              <option value=""></option>
-              <option value="Amazonas">Amazonas</option>
-              <option value="Antioquia">Antioquia</option>
-              <option value="Arauca">Arauca</option>
-              <option value="Atlántico">Atlántico</option>
-              <option value="Bolívar">Bolívar</option>
-              <option value="Boyacá">Boyacá</option>
-              <option value="Caldas">Caldas</option>
-              <option value="Caquetá">Caquetá</option>
-              <option value="Casanare">Casanare</option>
-              <option value="Cauca">Cauca</option>
-              <option value="Cesar">Cesar</option>
-              <option value="Chocó">Chocó</option>
-              <option value="Córdoba">Córdoba</option>
-              <option value="Cundinamarca}">Cundinamarca</option>
-              <option value="Guainía">Guainía</option>
-              <option value="Guaviare">Guaviare</option>
-              <option value="Huila">Huila</option>
-              <option value="La Guajira">La Guajira</option>
-              <option value="Magdalena">Magdalena</option>
-              <option value="Meta">Meta</option>
-              <option value="Nariño">Nariño</option>
-              <option value="Norte de Santander">Norte de Santander</option>
-              <option value="Putumayo">Putumayo</option>
-              <option value="Quindío">Quindío</option>
-              <option value="Risaralda">Risaralda</option>
-              <option value="San Andrés y Providencia">San Andrés y Providencia</option>
-              <option value="Santander">Santander</option>
-              <option value="Sucre">Sucre</option>
-              <option value="Tolima">Tolima</option>
-              <option value="Valle">Valle del Cauca</option>
-              <option value="Vaupés">Vaupés</option>
-              <option value="Vichada">Vichada</option>
-            </select>
+        <select class="combo" name="departamento" id="departamento" onchange="cargarCiudades();" required>
+         <option value="">Departamento</option>
+         </select> 
     	
 
-    <select id="Ciudad" name="Ciudad" data-placeholder="- Seleccione Ciudad -"
-          class="combo" value="<%= typeof Ciudad != 'undefined' ? Ciudad : '' %>" >
-            <option value=""></option>
-          </select>
-
-    <input class="button" type="submit" value="Registrar">
-    <p><a href="#">¿Ya tengo cuenta?</a></p>
+    <select class="combo" name="ciudad" id="ciudad" required>
+         <option value="">Ciudad</option>
+         </select>
+     <button class="button" type="submit" href="./contenido.html" name="enviar">Registrar</button>
+     <p><a href="./login.html">¿Ya tengo cuenta?</a></p>
   </form>
-</body>
+</body> 
 </html>
