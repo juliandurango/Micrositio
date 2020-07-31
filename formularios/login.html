@@ -11,13 +11,13 @@
   <form class="login" method="POST" action="./contenido.html">
   	<h4>Inicio sesión</h4>
     <div>
-    	<input class="campo" type="email" name="correo" id="correo" placeholder="Ingrese su correo electrónico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
+    	<input class="campo" type="email" name="correo" id="correo" placeholder="Correo electrónico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="example@hotmail.com" required/>
   		<title>"Ingrese el correo"</title>
     </div>
     
-    <input class="campo" type="password" name="contraseña" id="contraseña" placeholder="Ingrese su contraseña" pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$" required/>
+    <input class="campo" type="password" name="clave" id="clave" placeholder="Contraseña" pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$" title="Una contraseña válida debe estar compuesta por letras y/o números y tener una longitud entre 8 y 16 caracteres" required/>
 
-    <button class="button" type="submit" href="./contenido.html">Iniciar sesión</button>
+    <button class="button" type="submit" href="./contenido.html" id="btn">Iniciar sesión</button>
     <p>¿No tengo cuenta? <a href="./index.html">Registrate</a></p>
   </form>
 

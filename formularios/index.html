@@ -16,11 +16,11 @@
   	</div>
 
   	<div>
-  		<input class="campo" type="text" name="apellidos" placeholder="Apellido" pattern="(?=.*[a-z])(?=.*[A-Z]).{5,}" required/>
+  		<input class="campo" type="text" name="apellidos" placeholder="Apellido" pattern="(?=.*[a-z])(?=.*[A-Z]).{5,}" title="La edad mínimo 12 años" required/>
   	</div>
     
     <div>
-    	<input class="campo" type="email" name="correo" placeholder="Correo Electrónico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
+    	<input class="campo" type="email" name="correo" placeholder="Correo Electrónico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="example@hotmail.com" required/>
     </div>
 
     <div>
@@ -29,15 +29,14 @@
     
     <input class="campo" type="password" name="clave" placeholder="Contraseña" pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$" title="Una contraseña válida debe estar compuesta por letras y/o números y tener una longitud entre 8 y 16 caracteres" required/>
 
-        <select class="combo" name="departamento" id="departamento" onchange="cargarCiudades();" required>
-         <option value="">Departamento</option>
-         </select> 
-    	
+    <select class="combo" name="departamento" id="departamento" onchange="cargarCiudades();" required>
+      <option value="">Departamento</option>
+    </select> 
 
     <select class="combo" name="ciudad" id="ciudad" required>
-         <option value="">Ciudad</option>
-         </select>
-     <button class="button" type="submit" href="./contenido.html" name="enviar">Registrar</button>
+      <option value="">Ciudad</option>
+    </select>
+     <button class="button" type="button" href="./contenido.html" name="enviar">Registrar</button>
      <p><a href="./login.html">¿Ya tengo cuenta?</a></p>
   </form>
 </body> 

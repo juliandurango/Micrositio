@@ -16,6 +16,7 @@ var listaCiudades = { amazonas: ["Leticia", "Puerto Nariño"],
   cauca: ["Guapi", "Popayán", "Timbiquí"],
   cesar: ["Aguachica", "Becerril", "Valledupar"],
   choco: ["Alto Baudó", "Bahía Solano", "Istmina", "Lloró", "Quibdó"],
+  cordoba: ["Cereté", "Lorica", "Montería"],
   cundinamarca: ["Bogotá", "Facatativá", "Fusagasugá", "Guaduas", "San Antonio del Tequendama"],
   guainia: ["Puerto Colombia", "Puerto Inírida"],
   guaviare: ["Calamar", "El Retorno", "Miraflores", "San José del Guaviare"],
@@ -36,6 +37,8 @@ var listaCiudades = { amazonas: ["Leticia", "Puerto Nariño"],
   vaupes: ["Carurú", "Mitú", "Taraira"],
   vichada: ["Cumaribo", "La Primavera", "Puerto Carreño", "Santa Rosalía"]
 }
+
+let user = {};
 
 function cargarDepartamentos() {
   addOptions("departamento", array);
@@ -83,41 +86,61 @@ function cargarCiudades() {
  
 window.onload = cargarDepartamentos;
 
+window.onload = function(){
+      user = localStorage.getItem("correo");
+
+      if(user){
+        user = JSON.parse(user);
+        correo.value = user.correo;
+      }
+
+      btn.addEventListener("button", guardarUsuario);
+}
+
+function guardarUsuario(){
+    e.preventDefault();
+    let obj = {};
+    obj.correo = correo.value;
+    str = JSON.stringify(obj);
+    localStorage.setItem("usuario",str);
+    console.log("guardarUsuario")
+}
+
 //GALERIA
 $(document).ready(function () {
-        var carousel = $("#carousel").waterwheelCarousel({
-          flankingItems: 3,
-          movingToCenter: function ($item) {
-            $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
-          },
-          movedToCenter: function ($item) {
-            $('#callback-output').prepend('movedToCenter: ' + $item.attr('id') + '<br/>');
-          },
-          movingFromCenter: function ($item) {
-            $('#callback-output').prepend('movingFromCenter: ' + $item.attr('id') + '<br/>');
-          },
-          movedFromCenter: function ($item) {
-            $('#callback-output').prepend('movedFromCenter: ' + $item.attr('id') + '<br/>');
-          },
-          clickedCenter: function ($item) {
-            $('#callback-output').prepend('clickedCenter: ' + $item.attr('id') + '<br/>');
-          }
-        });
+  var carousel = $("#carousel").waterwheelCarousel({
+  flankingItems: 3,
+  movingToCenter: function ($item) {
+    $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
+  },
+  movedToCenter: function ($item) {
+    $('#callback-output').prepend('movedToCenter: ' + $item.attr('id') + '<br/>');
+  },
+  movingFromCenter: function ($item) {
+    $('#callback-output').prepend('movingFromCenter: ' + $item.attr('id') + '<br/>');
+  },
+  movedFromCenter: function ($item) {
+    $('#callback-output').prepend('movedFromCenter: ' + $item.attr('id') + '<br/>');
+  },
+  clickedCenter: function ($item) {
+    $('#callback-output').prepend('clickedCenter: ' + $item.attr('id') + '<br/>');
+  }
+  });
 
-        $('#prev').bind('click', function () {
-          carousel.prev();
-          return false
-        });
+  $('#prev').bind('click', function () {
+    carousel.prev();
+    return false
+  });
 
-        $('#next').bind('click', function () {
-          carousel.next();
-          return false;
-        });
+  $('#next').bind('click', function () {
+    carousel.next();
+    return false;
+  });
 
-        $('#reload').bind('click', function () {
-          newOptions = eval("(" + $('#newoptions').val() + ")");
-          carousel.reload(newOptions);
-          return false;
-        });
+  $('#reload').bind('click', function () {
+    newOptions = eval("(" + $('#newoptions').val() + ")");
+    carousel.reload(newOptions);
+    return false;
+  });
+});
 
-      });
