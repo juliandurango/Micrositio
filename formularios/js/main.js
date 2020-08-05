@@ -1,34 +1,32 @@
 let frm;
 window.onload = function () {
-      frm = document.getElementById("registro");
+    frm = document.getElementById("registro");
+    cargarDepartamentos();
 
-      cargarDepartamentos();
-
-      frm.addEventListener('submit', function (e) {
-         e.preventDefault();
-         // check if the form is valid
-        procesarPassword();
-         //frm.submit();
-      });
+    frm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    // check if the form is valid
+    procesarPassword();
+    //frm.submit();
+    });
 };
-
-    function procesarPassword(){//Explicar las dos formas de consumir el script por el for o por acá
-      // url (required), options (optional)
-      fetch('script/main.php', {
-        method: 'post',
-        body: new FormData(frm)
-      }).then(function(response) {
-        return response.json();
-      }).then(function(json){
-        guardarDatosLocales(json);
-      }).catch(function(err) {
-        // Error :(
-      });
-    }
-    function guardarDatosLocales(json){
-        localStorage.setItem(correo.value,JSON.stringify(json));
-        location.href = "login.html";
-    }
+function procesarPassword(){//Explicar las dos formas de consumir el script por el for o por acá
+  // url (required), options (optional)
+  fetch('script/main.php', {
+    method: 'post',
+    body: new FormData(frm)
+  }).then(function(response) {
+    return response.json();
+  }).then(function(json){
+    guardarDatosLocales(json);
+  }).catch(function(err) {
+    // Error :(
+  });
+}
+function guardarDatosLocales(json){
+  localStorage.setItem(correo.value,JSON.stringify(json));
+  location.href = "login.html";
+}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var array = ["amazonas|Amazonas", "antioquia|Antioquia", "arauca|Arauca", "atlantico|Atlántico", "bolivar|Bolívar", "boyaca|Boyacá", 
             "caldas|Caldas", "caqueta|Caquetá", "casanare|Casanare", "cauca|Cauca", "cesar|Cesar", "choco|Chocó", "cordoba|Córdoba",
