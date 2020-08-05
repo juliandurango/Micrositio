@@ -1,3 +1,35 @@
+let frm;
+window.onload = function () {
+      frm = document.getElementById("registro");
+
+      cargarDepartamentos();
+
+      frm.addEventListener('submit', function (e) {
+         e.preventDefault();
+         // check if the form is valid
+        procesarPassword();
+         //frm.submit();
+      });
+};
+
+    function procesarPassword(){//Explicar las dos formas de consumir el script por el for o por acá
+      // url (required), options (optional)
+      fetch('script/main.php', {
+        method: 'post',
+        body: new FormData(frm)
+      }).then(function(response) {
+        return response.json();
+      }).then(function(json){
+        guardarDatosLocales(json);
+      }).catch(function(err) {
+        // Error :(
+      });
+    }
+    function guardarDatosLocales(json){
+        localStorage.setItem(correo.value,JSON.stringify(json));
+        location.href = "login.html";
+    }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var array = ["amazonas|Amazonas", "antioquia|Antioquia", "arauca|Arauca", "atlantico|Atlántico", "bolivar|Bolívar", "boyaca|Boyacá", 
             "caldas|Caldas", "caqueta|Caquetá", "casanare|Casanare", "cauca|Cauca", "cesar|Cesar", "choco|Chocó", "cordoba|Córdoba",
             "cundinamarca|Cundinamarca", "guainia|Guainía", "guaviare|Guaviare", "huila|Huila", "guajira|La Guajira", "magdalena|Magdalena", 
@@ -27,7 +59,7 @@ var listaCiudades = { amazonas: ["Leticia", "Puerto Nariño"],
   nariño: ["Olaya Herrera", "Pasto", "Tumaco"],
   norte: ["Cúcuta", "Ocaña", "Puerto Santander", "Sardinata"],
   putumayo: ["Mocoa", "Sibundoy"],
-  quindío: ["Armenia", "Calarcá", "Filandía", "Salento"],
+  quindio: ["Armenia", "Calarcá", "Filandía", "Salento"],
   risaralda: ["Dosquebradas", "Pereira", "Santa Rosa de Cabal"],
   sanandres: ["Providencia y Santa Catalina Islas", "San Andrés"],
   santander: ["Barrancabermeja", "Bucaramanga", "Floridablanca", "San Gil"],
@@ -81,32 +113,8 @@ function cargarCiudades() {
         ciudades.add(opcion);
       });
     }
-    
-  }
- 
-window.onload = cargarDepartamentos;
-
-window.onload = function(){
-      user = localStorage.getItem("correo");
-
-      if(user){
-        user = JSON.parse(user);
-        correo.value = user.correo;
-      }
-
-      btn.addEventListener("button", guardarUsuario);
 }
 
-function guardarUsuario(){
-    e.preventDefault();
-    let obj = {};
-    obj.correo = correo.value;
-    str = JSON.stringify(obj);
-    localStorage.setItem("usuario",str);
-    console.log("guardarUsuario")
-}
-
-//GALERIA
 $(document).ready(function () {
   var carousel = $("#carousel").waterwheelCarousel({
   flankingItems: 3,
@@ -143,4 +151,3 @@ $(document).ready(function () {
     return false;
   });
 });
-

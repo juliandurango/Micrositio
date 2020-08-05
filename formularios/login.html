@@ -7,8 +7,7 @@
 </head>
  
 <body>
-
-  <form class="login" method="POST" action="./contenido.html">
+  <form id="login" class="login" method="post" action="./contenido.html">
   	<h4>Inicio sesión</h4>
     <div>
     	<input class="campo" type="email" name="correo" id="correo" placeholder="Correo electrónico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="example@hotmail.com" required/>
@@ -20,6 +19,7 @@
     <button class="button" type="submit" href="./contenido.html" id="btn">Iniciar sesión</button>
     <p>¿No tengo cuenta? <a href="./index.html">Registrate</a></p>
   </form>
-
+  <script src="js/vendor/pristine.min.js"></script>
+  <script type= "text/javascript" src="./js/login.js"></script>
 </body>
 </html>
